@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes</title>
+
+    <!-- boostrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awsome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <!-- custome style link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- lets start  -->
+
+    <header class="header">
+        <div class="topbar">
+            <div class="container">
+                <div class="offer-banner">
+                    <p><a href="">Log In</a></p>
+                    <p>/</p>
+                    <p><a href="">Sign Up</a></p>
+                    <p>/</p>
+                    <p><a href="">My Account</a></p>
+                </div>
+                <div class="top-social">
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li><a href=""><i class="fa-solid fa-user"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="meanu-sec py-3">
+            <div class="container">
+                <div class="logo"><img src="imgs/logo.png" alt=""></div>
+                <div class="desk-menu">
+                    <ul class="flex-menus">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Arrivals</a></li>
+                        <li><a href="">Shop</a></li>
+                        <li><a href="">Trends</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="toggle-menu">
+                    <a class="btn toggle-icon" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                        aria-controls="offcanvasExample">
+                        <!-- we mistakenly use pro icon  -->
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- using that off canvas for inertactive menus  -->
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menus</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-menus">
+                <li><a href="">Home</a></li>
+                <li><a href="">Arrivals</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Trends</a></li>
+                <li><a href="">Blogs</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- lets done  -->
+
+    <section class="banner-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="banner-text">
+                        <span>The Sale will take place this week</span>
+                        <h3>Up to 50% Off <br> First Order</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut eos voluptate deserunt quaerat.
+                            Ex, illo doloremque? Id dignissimos quia itaque.</p>
+                        <div class="nav-btn mt-4"><a href="">Shop Now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-sec py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="feature-flex">
+                        <i class="fa-solid fa-shield"></i>
+                        <div class="">
+                            <p>100% Secure Payments</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="feature-flex">
+                        <i class="fa-solid fa-headset"></i>
+                        <div class="">
+                            <p>24/7 Customer Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="feature-flex">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <div class="">
+                            <p>30 days Return</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="feature-flex">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div class="">
+                            <p>Free Shipping</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="deal-sec bg-color py-5">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="pe-5 text-end">
+                    <h3 class="title">Best Deals of This Week !</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, doloribus.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/1.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/2.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/3.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/4.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/5.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/6.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/7.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/8.jpg" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="trend-sec py-5">
+        <div class="container-fluid">
+            <h3 class="title text-center">Trending Now</h3>
+
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="trend-box">
+                        <img src="imgs/trend-1.jpg" alt="">
+                        <h4>kid's Shoe</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trend-box">
+                        <img src="imgs/trend-2.jpg" alt="">
+                        <h4>Women's Shoe</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trend-box">
+                        <img src="imgs/trend-3.jpg" alt="">
+                        <h4>Men's Shoe</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- we gonna use same section of products with diffrent imgs  -->
+
+    <!-- we copy that & paste it here  -->
+
+    <section class="deal-sec bg-color py-5">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="pe-5 text-center">
+                    <h3 class="title">Top Sales</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, doloribus.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/pr-1.png" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/pr-2.png" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/pr-3.png" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-box">
+                        <div class="pr-img">
+                            <div class="img">
+                                <img src="imgs/pr-4.png" alt="">
+                            </div>
+                            <div class="tags">
+                                <div class="nav-btn"><a href="">Add to Cart</a></div>
+                                <ul class="share-pr">
+                                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                                    <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pr-txt">
+                            <div class="price">$99.00/-</div>
+                            <p>Sports Delight Sneakers</p>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 showcat-sec bg-color">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="show-product">
+                        <img src="imgs/show-1.png" alt="">
+                        <div class="show-txt">
+                            <h6>Walk with Assurance</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, assumenda!</p>
+                            <div class="nav-btn mt-4"><a href="">Shop Now</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="show-product">
+                        <img src="imgs/show-2.png" alt="">
+                        <div class="show-txt">
+                            <h6>Fashionably Stepping Ahead !</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, assumenda!</p>
+                            <div class="nav-btn mt-4"><a href="">Shop Now</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+ <!-- lets make testimonial  -->
+
+ <section class="py-5 testimonial-sec">
+    <div class="container">
+        <h3 class="title text-center">What Our Client Say</h3>
+        <div id="carouselExample" class="carousel slide mt-5">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-box">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur error provident
+                            doloribus eligendi repudiandae saepe aliquam sit voluptate deleniti, tenetur ex magni
+                            numquam ducimus nesciunt fugiat odio doloremque rerum pariatur itaque exercitationem.
+                            Provident, sunt cupiditate!</p>
+                        <div class="test-info">
+                            <img src="imgs/test-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-box">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur error provident
+                            doloribus eligendi repudiandae saepe aliquam sit voluptate deleniti, tenetur ex magni
+                            numquam ducimus nesciunt fugiat odio doloremque rerum pariatur itaque exercitationem.
+                            Provident, sunt cupiditate!</p>
+                        <div class="test-info">
+                            <img src="imgs/test-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa-solid fa-circle-arrow-right"></i></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 blog-sec">
+    <div class="container">
+        <h3 class="title text-center">From the Blog</h3>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img src="imgs/blog-1.jpg" alt="">
+                    </div>
+                    <div class="blog-txt">
+                        <div class="date mb-2">19 feb 2025</div>
+                        <h4>All the Trends for you is here ... </h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae placeat asperiores natus impedit sit.</p>
+                        <a href="" class="blog-ar"> Read More <i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img src="imgs/blog-2.jpg" alt="">
+                    </div>
+                    <div class="blog-txt">
+                        <div class="date mb-2">19 feb 2025</div>
+                        <h4>All the Trends for you is here ... </h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae placeat asperiores natus impedit sit.</p>
+                        <a href="" class="blog-ar"> Read More <i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img src="imgs/blog-3.jpg" alt="">
+                    </div>
+                    <div class="blog-txt">
+                        <div class="date mb-2">19 feb 2025</div>
+                        <h4>All the Trends for you is here ... </h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae placeat asperiores natus impedit sit.</p>
+                        <a href="" class="blog-ar"> Read More <i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- make footer  -->
+
+<footer class="footer bg-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer-box">
+                    <div class="footer-img mb-3"><img src="imgs/logo.png" alt=""></div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quia.</p>
+                <div class="pay-img"><img src="imgs/pay.png" alt=""></div>
+            </div>
+            <div class="col-lg-3">
+                <div class="f-title"><h5>Useful Links</h5></div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="">Secure Shopping</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">Delivery</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="f-title"><h5>Customer Services</h5></div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="">Secure Shopping</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">FAQ's</a></li>
+                        <li><a href="">Help Canter</a></li>
+                        <li><a href="">Email Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="f-title"><h5>Company Details</h5></div>
+                <div class="footer-content">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="">
+                        <a href="tel:">12345 67890</a>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="">
+                        <a href="mailto:">info@codingwing.com</a>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="">
+                        <a href="#">Lorem, ipsum dolor.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<section class="copyright">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <p>copyright @ 2025 coding wing . All right reserved</p>
+            <ul class="social-icons">
+                <!-- icons working slow  -->
+                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+    
+
+
+
+
+
+    <!-- we have to use js too  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
