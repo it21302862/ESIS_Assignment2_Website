@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    sh 'docker build -t esis-iso-assignment:latest .'
+                    bat 'docker build -t esis-iso-assignment:latest .'
                 }
             }
         }
@@ -15,8 +15,8 @@ pipeline {
             steps {
                 script {
                     echo 'Running container on port 9090...'
-                    sh 'docker rm -f esis-container || true'
-                    sh 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
+                    bat 'docker rm -f esis-container || true'
+                    bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
             }
         }
