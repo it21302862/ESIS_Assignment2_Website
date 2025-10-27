@@ -1,0 +1,21 @@
+- name: Deploy HTML website to cloud server
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Stop and remove old container
+      command: docker rm -f esis-container
+      ignore_errors: yes
+
+    - name: Build Docker image locally
+      command: docker build -t esis-iso-assignment:latest .
+      args:
+        chdir: /mnt/d/documents/GitHub/ESIS_Assignment2_Website
+
+    - name: Run new container
+      command: docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest
