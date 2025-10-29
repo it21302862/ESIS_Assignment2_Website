@@ -29,7 +29,7 @@ pipeline {
                     echo '🚀 Deploying Docker container to EC2 (13.60.41.13)...'
 
                     // Path to your PEM key (use forward slashes)
-                    String pemPath = "D:/GenkinsAccessGSIS.pem"
+                    String pemPath = "C:/ProgramData/Jenkins/.jenkins/keys/GenkinsAccessGSIS.pem"
                     String ec2Host = "ec2-user@13.60.41.13"
 
                     // SSH directly to EC2 and deploy container
