@@ -1,4 +1,4 @@
-pipeline { 
+pipeline {
     agent any
 
     stages {
@@ -15,9 +15,7 @@ pipeline {
             steps {
                 script {
                     echo '🧪 Running container locally on port 9090...'
-                    // Safely remove existing container if it exists
                     bat 'docker ps -a -q --filter "name=esis-container" | findstr . && docker rm -f esis-container || echo "No existing container to remove"'
-                    // Run new container
                     bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
             }
@@ -26,22 +24,20 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 script {
-                    echo '🚀 Deploying Docker container to EC2 (13.60.41.13)...'
+                    echo '🚀 Deploying Docker container to EC2...'
 
-                    // Path to your PEM key (use forward slashes)
-                    String pemPath = "C:/ProgramData/Jenkins/.jenkins/keys/GenkinsAccessGSIS.pem"
-                    String ec2Host = "ec2-user@13.60.41.13"
-
-                    // SSH directly to EC2 and deploy container
-                    bat """
-                    ssh -i "${pemPath}" -o StrictHostKeyChecking=no ${ec2Host} ^
-                    "sudo systemctl start docker || true && \
-                    docker rm -f esis-container || true && \
-                    mkdir -p /home/ec2-user/app && \
-                    cd /home/ec2-user/app && \
-                    echo '===== 🐳 Running new container on port 9090 =====' && \
-                    docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest"
-                    """
+                    // Use Jenkins SSH agent
+                    sshagent(['ec2-ssh-key']) { // Use your credential ID
+                        bat """
+                        ssh -o StrictHostKeyChecking=no ec2-user@13.60.41.13 ^
+                        "sudo systemctl start docker || true && \
+                        docker rm -f esis-container || true && \
+                        mkdir -p /home/ec2-user/app && \
+                        cd /home/ec2-user/app && \
+                        echo '===== 🐳 Running new container on port 9090 =====' && \
+                        docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest"
+                        """
+                    }
                 }
             }
         }
