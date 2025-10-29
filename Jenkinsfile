@@ -27,8 +27,7 @@ pipeline {
                     echo '🚀 Deploying Docker container to EC2 (13.60.41.13)...'
                 }
 
-                // Use your actual Jenkins credential ID
-                sshagent(['id.ee2cd2f4-0c7e-45f7-87af-27d71144dc73']) {
+                sshagent(['ec2-ssh-key']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ec2-user@13.60.41.13 << 'EOF'
                         echo "===== ✅ Connected to EC2 Instance ====="
