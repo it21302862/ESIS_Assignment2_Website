@@ -15,8 +15,9 @@ pipeline {
             steps {
                 script {
                     echo '🧪 Running container locally on port 9090...'
-                    // safer removal
+                    // Safely remove existing container if it exists
                     bat 'docker ps -a -q --filter "name=esis-container" | findstr . && docker rm -f esis-container || echo "No existing container to remove"'
+                    // Run new container
                     bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
             }
@@ -27,9 +28,11 @@ pipeline {
                 script {
                     echo '🚀 Deploying Docker container to EC2 (13.60.41.13)...'
 
-                    String pemPath = "D:\GenkinsAccessGSIS.pem"
+                    // Path to your PEM key (use forward slashes)
+                    String pemPath = "D:/GenkinsAccessGSIS.pem"
                     String ec2Host = "ec2-user@13.60.41.13"
 
+                    // SSH directly to EC2 and deploy container
                     bat """
                     ssh -i "${pemPath}" -o StrictHostKeyChecking=no ${ec2Host} ^
                     "sudo systemctl start docker || true && \
