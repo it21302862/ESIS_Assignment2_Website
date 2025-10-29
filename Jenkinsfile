@@ -26,21 +26,19 @@ pipeline {
             steps {
                 script {
                     echo '🚀 Deploying Docker container to EC2 (13.60.41.13)...'
-                }
 
-                sshagent(['ee2cd2f4-0c7e-45f7-87af-27d71144dc73']) {
-                    sh '''
-                        ssh -o StrictHostKeyChecking=no ec2-user@13.60.41.13 << 'EOF'
-                        echo "===== ✅ Connected to EC2 Instance ====="
+                    String pemPath = "D:\GenkinsAccessGSIS.pem"
+                    String ec2Host = "ec2-user@13.60.41.13"
 
-                        sudo systemctl start docker || true
-                        docker rm -f esis-container || true
-                        mkdir -p /home/ec2-user/app
-                        cd /home/ec2-user/app
-                        echo "===== 🐳 Running new container on port 9090 ====="
-                        docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest
-                        EOF
-                    '''
+                    bat """
+                    ssh -i "${pemPath}" -o StrictHostKeyChecking=no ${ec2Host} ^
+                    "sudo systemctl start docker || true && \
+                    docker rm -f esis-container || true && \
+                    mkdir -p /home/ec2-user/app && \
+                    cd /home/ec2-user/app && \
+                    echo '===== 🐳 Running new container on port 9090 =====' && \
+                    docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest"
+                    """
                 }
             }
         }
