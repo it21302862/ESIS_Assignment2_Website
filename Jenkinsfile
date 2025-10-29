@@ -27,7 +27,7 @@ pipeline {
                     echo '🚀 Deploying Docker container to EC2...'
 
                     // Use Jenkins SSH agent
-                    sshagent(['ec2-ssh-key']) { // Use your credential ID
+                    sshagent(['ee2cd2f4-0c7e-45f7-87af-27d71144dc73']) { // Use your credential ID
                         bat """
                         ssh -o StrictHostKeyChecking=no ec2-user@13.60.41.13 ^
                         "sudo systemctl start docker || true && \
