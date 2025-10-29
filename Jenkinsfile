@@ -15,7 +15,8 @@ pipeline {
             steps {
                 script {
                     echo '🧪 Running container locally on port 9090...'
-                    bat 'docker rm -f esis-container || exit 0'
+                    // safer removal
+                    bat 'docker ps -a -q --filter "name=esis-container" | findstr . && docker rm -f esis-container || echo "No existing container to remove"'
                     bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
             }
@@ -32,19 +33,10 @@ pipeline {
                         ssh -o StrictHostKeyChecking=no ec2-user@13.60.41.13 << 'EOF'
                         echo "===== ✅ Connected to EC2 Instance ====="
 
-                        # Ensure Docker is running
                         sudo systemctl start docker || true
-
-                        # Stop and remove any old container
                         docker rm -f esis-container || true
-
-                        # Ensure app directory exists
                         mkdir -p /home/ec2-user/app
                         cd /home/ec2-user/app
-
-                        # (Optional) If using Git repo on EC2:
-                        # git pull origin main
-
                         echo "===== 🐳 Running new container on port 9090 ====="
                         docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest
                         EOF
