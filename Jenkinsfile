@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout SCM') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
@@ -15,10 +21,35 @@ pipeline {
             steps {
                 script {
                     echo '🧪 Running container locally on port 9090...'
-                    bat 'docker ps -a -q --filter "name=esis-container" | findstr . && docker rm -f esis-container || echo "No existing container to remove"'
+                    
+                    // Remove old container if it exists
+                    bat '''
+                    docker ps -a --filter "name=esis-container" -q > temp.txt
+                    set /p CID=<temp.txt
+                    if defined CID (
+                        docker rm -f esis-container
+                    ) else (
+                        echo No existing container to remove
+                    )
+                    del temp.txt
+                    '''
+                    
+                    // Run the new container
                     bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            echo '✅ Pipeline finished.'
+        }
+        success {
+            echo '🎉 Docker container is running successfully!'
+        }
+        failure {
+            echo '❌ Pipeline failed. Check logs above.'
         }
     }
 }
