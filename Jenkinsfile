@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    echo '🏗️ Building Docker image...'
+                    echo 'Building Docker image...'
                     bat 'docker build -t esis-iso-assignment:latest .'
                 }
             }
@@ -20,9 +20,8 @@ pipeline {
         stage('Run Docker Container (Local Test)') {
             steps {
                 script {
-                    echo '🧪 Running container locally on port 9090...'
+                    echo 'Running container locally on port 9090...'
                     
-                    // Remove old container if it exists
                     bat '''
                     docker ps -a --filter "name=esis-container" -q > temp.txt
                     set /p CID=<temp.txt
@@ -34,7 +33,6 @@ pipeline {
                     del temp.txt
                     '''
                     
-                    // Run the new container
                     bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
             }
@@ -43,13 +41,13 @@ pipeline {
 
     post {
         always {
-            echo '✅ Pipeline finished.'
+            echo 'Pipeline finished.'
         }
         success {
-            echo '🎉 Docker container is running successfully!'
+            echo 'Docker container is running successfully!'
         }
         failure {
-            echo '❌ Pipeline failed. Check logs above.'
+            echo 'Pipeline failed. Check logs above.'
         }
     }
 }
