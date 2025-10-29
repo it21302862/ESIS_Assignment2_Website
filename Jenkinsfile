@@ -1,11 +1,11 @@
-pipeline {
+pipeline { 
     agent any
 
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    echo 'Building Docker image...'
+                    echo '🏗️ Building Docker image...'
                     bat 'docker build -t esis-iso-assignment:latest .'
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage('Run Docker Container (Local Test)') {
             steps {
                 script {
-                    echo 'Running container on port 9090...'
+                    echo '🧪 Running container locally on port 9090...'
                     bat 'docker rm -f esis-container || exit 0'
                     bat 'docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest'
                 }
@@ -24,27 +24,29 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 script {
-                    echo 'Deploying Docker container to EC2...'
+                    echo '🚀 Deploying Docker container to EC2 (13.60.41.13)...'
                 }
-                sshagent(['ec2-ssh-key']) {
+
+                // Use your actual Jenkins credential ID
+                sshagent(['id.ee2cd2f4-0c7e-45f7-87af-27d71144dc73']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ec2-user@13.60.41.13 << 'EOF'
-                        echo "===== Connected to EC2 Instance ====="
-                        
+                        echo "===== ✅ Connected to EC2 Instance ====="
+
+                        # Ensure Docker is running
+                        sudo systemctl start docker || true
+
                         # Stop and remove any old container
                         docker rm -f esis-container || true
-                        
-                        # Pull latest Docker image from Jenkins build (if pushed)
-                        # docker pull your-dockerhub-username/esis-iso-assignment:latest
-                        
-                        # Or build directly from your repo if source is cloned
-                        cd /home/ec2-user/app || mkdir -p /home/ec2-user/app
+
+                        # Ensure app directory exists
+                        mkdir -p /home/ec2-user/app
                         cd /home/ec2-user/app
-                        
+
                         # (Optional) If using Git repo on EC2:
                         # git pull origin main
-                        
-                        echo "===== Running new container ====="
+
+                        echo "===== 🐳 Running new container on port 9090 ====="
                         docker run -d -p 9090:80 --name esis-container esis-iso-assignment:latest
                         EOF
                     '''
