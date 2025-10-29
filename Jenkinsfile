@@ -40,30 +40,6 @@ pipeline {
             }
         }
 
-        stage('Deploy to EC2') {
-            steps {
-                script {
-                    echo '🚀 Deploying Docker container to EC2...'
-
-                    sshagent([CREDENTIAL_ID]) {
-                        bat """
-                        echo "📦 Copying Dockerfile and app to EC2..."
-                        scp -o StrictHostKeyChecking=no -r * %EC2_USER%@%EC2_HOST%:/home/%EC2_USER%/app
-
-                        echo "🐳 Rebuilding and running container on EC2..."
-                        ssh -o StrictHostKeyChecking=no %EC2_USER%@%EC2_HOST% ^
-                        "sudo systemctl start docker || true && \
-                        cd /home/%EC2_USER%/app && \
-                        docker rm -f %CONTAINER_NAME% || true && \
-                        docker build -t %IMAGE_NAME%:latest . && \
-                        docker run -d -p 9090:80 --name %CONTAINER_NAME% %IMAGE_NAME%:latest && \
-                        echo '✅ App deployed successfully at http://%EC2_HOST%:9090'"
-                        """
-                    }
-                }
-            }
-        }
-
         stage('Verify Local Deployment') {
             steps {
                 script {
